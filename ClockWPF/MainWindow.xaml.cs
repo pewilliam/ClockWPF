@@ -2,21 +2,18 @@
 using System.Windows;
 using System.Windows.Threading;
 using System.Timers;
+using System.Windows.Controls;
 
 namespace ClockWPF
 {
-    /// <summary>
-    /// Interaction logic for MainWindow.xaml
-    /// </summary>
     public partial class MainWindow : Window
     {
-        Timer timer = new Timer(1);
+        Timer timer = new Timer();
+        string place = "";
 
         public MainWindow()
         {
             InitializeComponent();
-            Timer.Content = DateTime.Now.ToString("HH:mm:ss");
-            StartClock();
         }
 
         private void StartClock()
@@ -29,7 +26,25 @@ namespace ClockWPF
 
         private void Tickevent(object? sender, EventArgs e)
         {
-            Timer.Content = DateTime.Now.ToString("HH:mm:ss");
+            var info = TimeZoneInfo.FindSystemTimeZoneById(place);
+            DateTimeOffset localServerTime = DateTimeOffset.Now;
+            DateTimeOffset localTime = TimeZoneInfo.ConvertTime(localServerTime, info);
+            Timer.FontSize = 60;
+            Timer.Content = localTime.ToString("HH:mm:ss");
+        }
+
+        private void CB_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            place = (string)CB.SelectedValue;
+
+            if (timer.Enabled)
+            {
+                return;
+            }
+            else
+            {
+                StartClock();
+            }
         }
     }
 }

@@ -6,19 +6,49 @@
         xmlns:local="clr-namespace:ClockWPF"
         mc:Ignorable="d"
         Background="Black"
-        Title="MainWindow" Height="250" Width="300">
+        Title="Global clock"
+        Height="250"
+        Width="300"
+        ResizeMode="NoResize"
+        WindowStartupLocation="CenterScreen">
+    
+
     <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="0.10*"/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
 
         <Label x:Name="Timer"
-               Content=""
+               Content="Selecione uma timezone"
+               FontSize="20"
                Foreground="White"
                HorizontalContentAlignment="Center"
                VerticalContentAlignment="Center"
-               FontSize="60"
+               Grid.Row="1"
+               Grid.Column="0"
+               Grid.ColumnSpan="3"
                HorizontalAlignment="Center"
                VerticalAlignment="Center"
                Height="150"
                Width="250"/>
 
+
+
+        <ComboBox x:Name="CB"
+                  SelectedValuePath="Content"
+                  Grid.Column="0"
+                  Grid.ColumnSpan="3"
+                  SelectionChanged="CB_SelectionChanged">
+            <ComboBoxItem>Pacific Standard Time</ComboBoxItem>
+            <ComboBoxItem>Eastern Standard Time</ComboBoxItem>
+            <ComboBoxItem>E. South America Standard Time</ComboBoxItem>
+        </ComboBox>
     </Grid>
 </Window>
