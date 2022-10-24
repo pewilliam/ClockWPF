@@ -19,3 +19,4 @@ D:\Repos\ClockWPF\ClockWPF\obj\Release\net6.0-windows\refint\ClockWPF.dll
 D:\Repos\ClockWPF\ClockWPF\obj\Release\net6.0-windows\ClockWPF.pdb
 D:\Repos\ClockWPF\ClockWPF\obj\Release\net6.0-windows\ClockWPF.genruntimeconfig.cache
 D:\Repos\ClockWPF\ClockWPF\obj\Release\net6.0-windows\ref\ClockWPF.dll
+D:\Repos\ClockWPF\ClockWPF\obj\Release\net6.0-windows\App.baml

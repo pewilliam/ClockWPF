@@ -41,14 +41,18 @@
 
 
 
-        <ComboBox x:Name="CB"
+        <ComboBox Style="{DynamicResource ComboBoxStyle1}" x:Name="CB"
                   SelectedValuePath="Content"
                   Grid.Column="0"
                   Grid.ColumnSpan="3"
-                  SelectionChanged="CB_SelectionChanged">
+                  SelectionChanged="CB_SelectionChanged"
+                  Background="Transparent">
             <ComboBoxItem>Pacific Standard Time</ComboBoxItem>
             <ComboBoxItem>Eastern Standard Time</ComboBoxItem>
             <ComboBoxItem>E. South America Standard Time</ComboBoxItem>
+            <ComboBoxItem>Greenwich Standard Time</ComboBoxItem>
+            <ComboBoxItem>W. Europe Standard Time</ComboBoxItem>
+            <ComboBoxItem>New Zealand Standard Time</ComboBoxItem>
         </ComboBox>
     </Grid>
 </Window>

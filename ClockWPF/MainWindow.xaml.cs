@@ -48,3 +48,5 @@ namespace ClockWPF
         }
     }
 }
+
+//https://www.ge.com/digital/documentation/meridium/V36160/Help/Master/Subsystems/AssetPortal/Content/Time_Zone_Mappings.htm
